@@ -32,6 +32,7 @@ public class VTFConvert : AssetPostprocessor
             return;
         }
 
+        // looking for hl2/materials. here you can change it to episodic or ep2, or add an extra subfolder to materials.
         string matFolder = Path.Combine(sourceSDKPath, "hl2", "materials");
 
         // generate vtf next to the texture, because vtfcmd can't automatically output it into a specified folder
@@ -44,7 +45,7 @@ public class VTFConvert : AssetPostprocessor
         File.Copy(vtfPath, Path.Combine(matFolder, $"{texture.name}.vtf"), true);
         File.Delete(vtfPath);
 
-        // generate simple vmt
+        // generate a simple vmt. here you should add a subfolder for the texture search before {texture.name}
         string vmt = $"\"LightmappedGeneric\"\n{{\n\t\"$basetexture\" \"{texture.name}\"\n}}";
         File.WriteAllText(Path.Combine(matFolder, $"{texture.name}.vmt"), vmt);
     }
