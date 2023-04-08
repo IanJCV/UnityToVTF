@@ -1,7 +1,7 @@
 # UnityToVTF
 Automatically converts texture files from Unity to Hammer VTF on import.
 
-Requires VTFCmd.exe, which can be found [here.](https://github.com/Sky-rym/VTFEdit-Reloaded)
+Requires VTFCmd.exe, the source for which can be found [here.](https://github.com/Sky-rym/VTFEdit-Reloaded)
 
 When a Texture2D file gets imported into a `vtfexport` folder it gets automatically sent to an `hl2/materials/` folder 
 found in your install of Source SDK 2013 Singleplayer. You can also change it to search for Half-Life 2 or any other Source game, 
